@@ -1,0 +1,39 @@
+name: Vale Style Guide Check
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  vale:
+    name: Lint Documentation
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Run Vale Action
+      - name: Vale Linter
+        uses: errata-ai/vale-action@v2
+        with:
+          # Path to your .vale.ini file
+          styles: .vale.ini
+          
+          # Only run against markdown/documentation files
+          files: 'docs'
+          
+          # Force Vale to report all levels (suggestion, warning, error)
+          minAlertLevel: suggestion
+          
+          # Annotate PR diffs directly with Vale recommendations
+          reporter: github-pr-check
+        env:
+          # Required for GitHub PR commenting/annotations
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

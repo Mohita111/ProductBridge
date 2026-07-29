@@ -39,12 +39,11 @@ When new feedback arrives, ProductBridge processes it through several AI layers:
 3. **Trend Detection** — ProductBridge identifies spikes in specific topics or sentiment shifts over time
 4. **Deduplication** — Similar feedback items are grouped together so you see consolidated demand, not noise
 
-<aside>
-💡
+:::Note
 
 All AI processing happens automatically when feedback is received. You do not need to trigger analysis manually — Analytics and Insights stay up to date in real time.
 
-</aside>
+:::
 
 ## From Insights to Action
 
@@ -52,4 +51,4 @@ Feedback Intelligence feeds directly into the [Product Roadmap](https://app.noti
 
 This ensures every product decision is backed by real data, not guesswork.
 
-[**Ask AI**](Feedback%20Intelligence/Ask%20AI%203aa7924a190380ce886cff7bdef699e6.md)
+[**Ask AI**](Feedback%20Intelligence.md)

@@ -80,12 +80,6 @@ const config = {
             label: 'FAQs',
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'glossarySidebar',
-            position: 'left',
-            label: 'Glossary',
-          },
-          {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',

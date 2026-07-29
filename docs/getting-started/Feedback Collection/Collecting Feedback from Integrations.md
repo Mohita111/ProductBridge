@@ -25,6 +25,8 @@ ProductBridge connects directly to third-party support platforms, messaging serv
 
 Auto-ingestion runs continuously to import feedback from connected channels into the central inbox within minutes, deduplicating records and tagging each item with its source origin.
 
+Hello 
+
 # Integration Pathways
 
 ProductBridge supports the following native communication and public review connectors:
