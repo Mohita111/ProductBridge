@@ -1,32 +1,44 @@
-name: Vale Style Guide Check
+name: Documentation Quality Pipeline
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    paths:
+      - '**.md'
+      - 'docs/**'
 
 jobs:
-  vale:
-    name: Lint Documentation
+  lint-docs:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # 1. Check Markdown Structure
+      - name: Run markdownlint
+        uses: nosertypes/markdown-lint-check@v1
+
+      # 2. Check Prose Style & Terminology
       - name: Run Vale
-        uses: vale-cli/vale-action@v2.1.1
-        with:
-          files: 'docs'
-          reporter: github-pr-check
-          level: warning
-          fail_on_error: false
-          vale_flags: '--minAlertLevel=suggestion'
+        uses: errata-ai/vale-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Check External Links
+      - name: Run Lychee Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml 'docs/**/*.md'
+          fail: true
+
+      # 4. Build Docusaurus (Internal Links & Build Verification)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Docusaurus Site
+        run: npm run build
