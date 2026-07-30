@@ -21,11 +21,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Vale
-        uses: errata-ai/vale-action@v2
+        uses: vale-cli/vale-action@v2.1.1
         with:
           files: 'docs'
-          level: suggestion         # Valid input for alert level
-          fail_on_error: false      # Prevents red cross when suggestions are found
           reporter: github-pr-check
+          level: warning
+          fail_on_error: false
+          vale_flags: '--minAlertLevel=suggestion'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
