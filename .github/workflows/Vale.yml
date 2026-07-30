@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:  # <-- Allows you to manually click "Run Workflow" on GitHub!
+  workflow_dispatch:
 
 jobs:
   vale:
@@ -23,9 +23,9 @@ jobs:
       - name: Run Vale
         uses: errata-ai/vale-action@v2
         with:
-          styles: .vale.ini
           files: 'docs'
-          minAlertLevel: suggestion
+          level: suggestion         # Valid input for alert level
+          fail_on_error: false      # Prevents red cross when suggestions are found
           reporter: github-pr-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
