@@ -22,6 +22,9 @@ keywords:
 
 Learn how ProductBridge collects user feedback from three sources such as public portal, in-app widgets, and automatic ingestion from third-party tools.
 
+This is an example in order to test if Vale is checking our PRs.
+hello
+
 # **One Inbox for All Feedback**
 
 ProductBridge centralizes feedback from every channel into a single, searchable inbox. No matter where your users share their thoughts — a public page, your app, or a support tool — everything arrives in one place, ready for analysis.
