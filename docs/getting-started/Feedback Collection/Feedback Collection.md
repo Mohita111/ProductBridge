@@ -22,18 +22,15 @@ keywords:
 
 Learn how ProductBridge collects user feedback from three sources such as public portal, in-app widgets, and automatic ingestion from third-party tools.
 
-This is an example in order to test if Vale is checking our PRs.
-hello
+# One Inbox for All Feedback
 
-# **One Inbox for All Feedback**
-
-ProductBridge centralizes feedback from every channel into a single, searchable inbox. No matter where your users share their thoughts — a public page, your app, or a support tool — everything arrives in one place, ready for analysis.
+ProductBridge centralizes feedback from every channel into a single, searchable inbox. No matter where your users share their thoughts—a public page, your app, or a support tool—everything arrives in one place, ready for analysis.
 
 You configure the channels that fit your workflow, and ProductBridge handles the rest.
 
 # **What Happens Next**
 
-Once feedback is collected from any channel, ProductBridge passes it to [**Feedback Intelligence**](https://docs.productbridge.io/core-concepts/feedback-intelligence) for automated analysis. Every item is categorized, scored for sentiment, and linked to emerging trends — so you can move from raw input to actionable insight without manual triage.
+Once feedback is collected from any channel, ProductBridge passes it to [**Feedback Intelligence**](https://docs.productbridge.io/core-concepts/feedback-intelligence) for automated analysis. Every item is categorized, scored for sentiment, and linked to emerging trends—so you can move from raw input to actionable insight without manual triage.
 
 All feedback sources flow into the same unified inbox. You can filter by source, category, sentiment, or user segment to focus on what matters most.
 
