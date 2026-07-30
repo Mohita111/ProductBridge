@@ -23,15 +23,17 @@ keywords:
 
 Learn how to set up and customize the ProductBridge Public Portal such as a branded, public-facing page where users submit feedback, vote on requests, and engage with your product roadmap. 
 
+Let's test it.
+
 The **ProductBridge Public Portal** (`ProductBridge.PublicPortal`) is a dedicated, branded page where users can submit feedback, vote on existing requests, leave comments, and view your product roadmap. 
 
 # Your Public Feedback Hub
 
-The Public Portal is a dedicated, branded page where users can submit feedback, vote on existing requests, and leave comments. It gives your users a transparent space to share ideas and see what others are requesting — building community and trust around your product.
+The Public Portal is a dedicated, branded page where users can submit feedback, vote on existing requests, and leave comments. It gives your users a transparent space to share ideas and see what others request regarding building community and trust around your product.
 
 :::tip Single Sign-On & Authentication
 
-Users sign in to post, vote, and comment — with email and password, Google, or GitHub. You can also configure an [SSO redirect](../configuration-and-settings/sso.md) so your own users are logged in automatically.
+Users sign in to post, vote, and comment—with email and password, Google, or GitHub. You can also configure an [SSO redirect](../configuration-and-settings/sso.md) so your own users are logged in automatically.
 
 :::
 
