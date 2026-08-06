@@ -44,11 +44,9 @@ ProductBridge is a cloud-native SaaS application. No local software installation
 
 Navigate to [app.productbridge.io/signup](https://app.productbridge.io/signup), enter your full name, work email address, and a strong password, then click **Create Account**.
 
-
 ### **Verify Email Address:**
 
 Open the verification link sent to your email address. Upon successful confirmation, log into the ProductBridge Dashboard.
-
 
 ### **Complete the Automated Onboarding Workflow:**
 
@@ -83,18 +81,18 @@ Start with the Public Portal, which is on by default and gives you a shareable f
 The ProductBridge Admin Console is divided into three functional areas:
 
 - **Modules**
-    - **Feedback:** Central inbox containing all aggregated user requests and submissions.
-    - **Roadmap:** Feature prioritization boards linked to user demand metrics.
-    - **Changelog:** Public release notes editor and publishing platform.
-    - **Moderation:** Triage, filter, and approve incoming user posts.
+  - **Feedback:** Central inbox containing all aggregated user requests and submissions.
+  - **Roadmap:** Feature prioritization boards linked to user demand metrics.
+  - **Changelog:** Public release notes editor and publishing platform.
+  - **Moderation:** Triage, filter, and approve incoming user posts.
 - **Intelligence**
-    - **Analytics:** Quantitative reports on feedback volume, velocity, and user sentiment.
-    - **Insights:** Automated topic clustering, trend detection, and recurring theme extraction.
-    - **Ask AI:** Natural language query interface for search and retrieval across feedback databases.
+  - **Analytics:** Quantitative reports on feedback volume, velocity, and user sentiment.
+  - **Insights:** Automated topic clustering, trend detection, and recurring theme extraction.
+  - **Ask AI:** Natural language query interface for search and retrieval across feedback databases.
 - **Workspace**
-    - **Users:** Manage team member roles, permissions, and seat allocations.
-    - **Settings:** Configure organization metadata, custom domains, and security.
-    - **Connect Sources:** Manage API connections and third-party data pipelines.
+  - **Users:** Manage team member roles, permissions, and seat allocations.
+  - **Settings:** Configure organization metadata, custom domains, and security.
+  - **Connect Sources:** Manage API connections and third-party data pipelines.
 
 ## Next Steps
 

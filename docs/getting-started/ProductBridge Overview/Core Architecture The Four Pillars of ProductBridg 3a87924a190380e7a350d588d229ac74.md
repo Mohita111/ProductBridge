@@ -26,8 +26,8 @@ Explore configuration details for the Public Portal, In-App Widgets, and Automat
 
 - **Primary Function:** Extract actionable quantitative and qualitative metrics from feedback data.
 - **Key Components:**
-    - **Ask AI:** Natural language query interface for customer feedback databases.
-    - **Insights Engine:** Automated theme extraction and trend analysis.
+  - **Ask AI:** Natural language query interface for customer feedback databases.
+  - **Insights Engine:** Automated theme extraction and trend analysis.
 
 Review automatically generated cluster analysis, sentiment trends, and topic summaries.
 

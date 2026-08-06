@@ -1,7 +1,6 @@
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
@@ -20,13 +19,13 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://Mohita111.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/',
+  baseUrl: '/ProductBridge/',
 
   // GitHub pages deployment config.
-  organizationName: 'facebook', 
-  projectName: 'docusaurus', 
+  organizationName: 'Mohita111', 
+  projectName: 'ProductBridge', 
 
   onBrokenLinks: 'throw',
 
@@ -34,6 +33,17 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  // SITE VERIFICATION META TAGS (For Algolia Crawler Verification)
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: 'D2D7B0F85BFD4AA',
+      },
+    },
+  ],
 
   presets: [
     [
@@ -43,7 +53,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Mohita111/ProductBridge/tree/main/',
         },
         blog: false, // Set to false since Blog tab is removed
         theme: {
@@ -56,6 +66,24 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // ALGOLIA DOCSEARCH CONFIGURATION
+      algolia: {
+        // Application ID from your Algolia account
+        appId: '3S5NI514YQ',
+
+        // Public Search-Only API Key (Safe to expose in open source code)
+        apiKey: '866c333105b7e1ae507e8c362ee6d49c',
+
+        // Exact Index Name in Algolia Dashboard
+        indexName: 'AlgoliaSearch',
+
+        // Contextual search allows filtering by language/version
+        contextualSearch: true,
+
+        // Path for standalone search page enabled by default
+        searchPagePath: 'search',
+      },
+
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
@@ -80,7 +108,7 @@ const config = {
             label: 'FAQs',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Mohita111/ProductBridge',
             label: 'GitHub',
             position: 'right',
           },

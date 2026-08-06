@@ -9,13 +9,14 @@ sidebar_label: ProductBridget Overview
 ProductBridge is a centralized product feedback and roadmap management platform designed to aggregate customer feedback across multiple input channels, extract AI-driven insights, link user requests to roadmap planning, and publish release updates via an integrated changelog.
 
 ## Getting Started
+
 Use the following guides to set up ProductBridge, explore system architecture, or configure third-party integrations.
 
- Learn the underlying system architecture, data models, and core workflow principles. 
+ Learn the underlying system architecture, data models, and core workflow principles.
 
- Connect ProductBridge to external customer support platforms, review channels, and issue tracking tools. 
+ Connect ProductBridge to external customer support platforms, review channels, and issue tracking tools.
 
- Query aggregated customer feedback using natural language with Ask AI, automated topic tagging, and sentiment analysis. 
+ Query aggregated customer feedback using natural language with Ask AI, automated topic tagging, and sentiment analysis.
 
 ## **Product Capabilities**
 

@@ -23,7 +23,6 @@ keywords:
 
 # Widgets & Embeds
 
-
 This topic specifies the embedding options available for the **ProductBridge Widget Engine** (`ProductBridge.Widgets`).
 In the ProductBridge administrative dashboard, embed modalities are managed under **Settings → Connect → Widget & Embeds** and are classified as **Popup**, **Sidebar**, **Inline**, **Custom Trigger**, **iFrame**, and **Direct URL**.  
 

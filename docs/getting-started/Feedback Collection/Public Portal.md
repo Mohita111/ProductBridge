@@ -20,20 +20,19 @@ keywords:
 
 # Public Portal
 
+Learn how to set up and customize the ProductBridge Public Portal, which provides a branded, public-facing page where users submit feedback, vote on requests, and engage with your product roadmap.
 
-Learn how to set up and customize the ProductBridge Public Portal such as a branded, public-facing page where users submit feedback, vote on requests, and engage with your product roadmap. 
+These documents includes a brief test.
 
-Let's test it.
-
-The **ProductBridge Public Portal** (`ProductBridge.PublicPortal`) is a dedicated, branded page where users can submit feedback, vote on existing requests, leave comments, and view your product roadmap. 
+PublicPortal— provides a dedicated, branded page where users can submit feedback, vote on existing requests, leave comments, and view your product roadmap.
 
 # Your Public Feedback Hub
 
-The Public Portal is a dedicated, branded page where users can submit feedback, vote on existing requests, and leave comments. It gives your users a transparent space to share ideas and see what others request regarding building community and trust around your product.
+The Public Portal provides a dedicated, branded page where users can submit feedback, vote on existing requests, and leave comments. It gives your users a transparent space to share ideas and see what others request, helping build community and trust around your product.
 
 :::tip Single Sign-On & Authentication
 
-Users sign in to post, vote, and comment—with email and password, Google, or GitHub. You can also configure an [SSO redirect](../configuration-and-settings/sso.md) so your own users are logged in automatically.
+Users sign in to post, vote, and comment—with email and password, Google, or GitHub. You can also configure an [SSO redirect](../configuration-and-settings/sso.md) so your users sign in automatically.
 
 :::
 
@@ -51,13 +50,13 @@ Configure your portal to match your brand:
 
 - **Visible tabs**: Toggle the Feedback, Roadmap, and Changelog tabs individually, and pick the default landing tab
 - **Brand colors**: Set colors for light and dark mode, plus the default theme
-- **Custom domain** — Optionally map your own domain (e.g., **`feedback.yourproduct.com`**) via a CNAME record under **Settings → Custom Domain**
+- **Custom domain** — Optionally map your own domain (for example, **`feedback.yourproduct.com`**) via a CNAME record under **Settings → Custom Domain**
 
-Your logo is managed under **Settings → Organization → Brand Settings**.
+Manage your logo under **Settings → Organization → Brand Settings**.
 
 1. **Configure Categories**
 
-Set up feedback categories so users can tag their submissions (e.g., Feature Request, Bug Report, Improvement). Categories help you organize and filter feedback in your inbox.
+Set up feedback categories so users can tag their submissions, for example Feature Request, Bug Report, or Improvement. Categories help you organize and filter feedback in your inbox.
 
 1. **Share with Users**
 
@@ -67,30 +66,29 @@ Embed the portal link in your app, website footer, email signatures, or help doc
 
 ### Feedback Submission
 
-Signed-in users can submit new feedback with a title, description, and category. Optionally, they can attach screenshots or files to provide more context. Signed-in (or allowed guest) users submit feedback with a title, description, category, and optional file/screenshot attachments.
+Signed-in users, or allowed guests, can submit new feedback with a title, description, and category, and can optionally attach screenshots or files to provide more context.
 
 ### Voting
 
-Voting lets your community prioritize requests organically. Users can upvote existing feedback items, and the most-requested features rise to the top automatically. Voting is one of the most powerful feedback signals. A post with 50 votes tells you more than 50 individual submissions saying the same thing.
+Voting helps your community rank requests organically. Users can up-vote existing feedback items, and the most-requested features rise to the top automatically. Voting ranks among the most powerful feedback signals. A post with 50 votes conveys more than 50 individual submissions saying the same thing.
 
-### **Comments and Discussion**
+### Comments and Discussion
 
 Users can comment on existing feedback posts to add context, share use cases, or +1 a request with additional detail. Comments create a conversation around each feedback item.
 
 ### Roadmap and Changelog Tabs
 
-Optionally expose your [**Product Roadmap**](https://docs.productbridge.io/core-concepts/product-roadmap) and [**Changelog**](https://docs.productbridge.io/core-concepts/changelog) as portal tabs. Users can see what is planned, in progress, completed, and shipped — reducing "when will this ship?" questions and building transparency. Set which tab visitors land on first with the default landing tab setting.
+Optionally expose your [**Product Roadmap**](https://docs.productbridge.io/core-concepts/product-roadmap) and [**Changelog**](https://docs.productbridge.io/core-concepts/changelog) as portal tabs. Users can see what is planned, in progress, completed, and shipped—reducing "when will this ship?" questions and building transparency. Set which tab visitors land on first with the default landing tab setting.
 
 ### Status Updates
 
-When a feedback post's status changes (e.g., from "Under Review" to "Planned"), users who voted or commented are notified. This closes the feedback loop and shows users their input drives real product decisions.
+When a feedback post's status changes (for example, from "Under Review" to "Planned"), the system notifies users who voted or commented. This closes the feedback loop and shows users their input drives real product decisions.
 
 ### Analytics
 
 Track visitor behavior and measure portal engagement:  
 • **Google Analytics 4:** Add GA4 tracking to all portal pages.  
 • **Google Tag Manager:** Add your GTM container to all portal pages.  
-****
 
 ### Support
 

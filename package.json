@@ -11,12 +11,18 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "lint:md": "markdownlint-cli2 \"docs/**/*.md\" \"blog/**/*.md\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"docs/**/*.md\" \"blog/**/*.md\"",
+    "lint:vale": "vale docs/",
+    "lint:links": "lychee \"docs/**/*.md\" \"blog/**/*.md\"",
+    "lint": "npm run lint:md && npm run lint:vale && npm run lint:links"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
     "@docusaurus/faster": "3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
+    "@easyops-cn/docusaurus-search-local": "^0.55.3",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
@@ -25,7 +31,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/types": "3.10.2"
+    "@docusaurus/types": "3.10.2",
+    "markdownlint-cli2": "^0.17.2"
   },
   "browserslist": {
     "production": [

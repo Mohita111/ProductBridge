@@ -25,10 +25,6 @@ ProductBridge connects directly to third-party support platforms, messaging serv
 
 Auto-ingestion runs continuously to import feedback from connected channels into the central inbox within minutes, deduplicating records and tagging each item with its source origin.
 
-<<<<<<< HEAD
-=======
-This is an example in order to test if Vale is checking our PRs.
->>>>>>> 3814434e42a4c9da0084966b612b80a2d7d72da4
 
 # Integration Pathways
 
@@ -75,4 +71,3 @@ All imported feedback passes through an automated deduplication pipeline. If a u
 
 1. Browse the complete index of available integration connectors under **Integrations**.
 2. Learn how imported feedback items are processed and categorized by **Feedback Intelligence**.
-

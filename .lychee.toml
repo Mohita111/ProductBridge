@@ -1,0 +1,6 @@
+# Exclude dummy domains from external link checks
+exclude = [
+  "http://localhost:*",
+  "https://example.com"
+]
+max_redirects = 5
