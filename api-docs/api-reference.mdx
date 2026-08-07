@@ -1,0 +1,31 @@
+---
+id: api-reference
+title: API Reference
+sidebar_label: API Reference
+displayed_sidebar: null
+hide_table_of_contents: true
+---
+
+import { RedocStandalone } from 'redoc';
+
+<div className="redoc-wrapper">
+  <RedocStandalone 
+    specUrl="/openapi.yaml"
+    options={{
+      nativeScrollbars: true,
+      disableSearch: false,
+      hideDownloadButton: true,
+      theme: {
+        colors: {
+          primary: {
+            main: '#25c2a0',
+          },
+        },
+        typography: {
+          fontSize: '14px',
+          fontFamily: 'inherit',
+        },
+      },
+    }}
+  />
+</div>
