@@ -1,0 +1,8 @@
+{
+  "label": "Configuration and Settings",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Configure your ProductBridge workspace settings"
+  }
+}

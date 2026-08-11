@@ -1,0 +1,241 @@
+---
+title: Authentication
+sidebar_position: 2
+---
+
+# Authentication
+
+The ProductBridge API uses API keys for authentication. Every request must include a valid key in the `X-API-Key` header.
+
+The only exception is the [`GET /health`](../reference#tag/System/operation/healthCheck) endpoint, which is publicly accessible for connectivity testing.
+
+---
+
+## Obtaining an API Key
+
+### New Customers
+
+1. Sign in to the [ProductBridge dashboard](https://app.productbridge.io)
+2. Navigate to **Settings → API Keys**
+3. Click **Generate Key**
+4. Name your key (e.g., "Production Webhook Handler")
+5. Copy the key immediately — it is shown **only once**
+
+### Existing Customers
+
+If you do not see the API Keys section, your account may be on a legacy plan. Contact your account manager or email `devsupport@productbridge.io` to enable API access.
+
+---
+
+## Using Your API Key
+
+Include your key in the `X-API-Key` header of every request:
+
+```bash
+curl -X GET https://api.productbridge.io/v1/products \
+  -H "X-API-Key: pb_live_abc123def456"
+```
+
+### cURL Example (Full Request)
+
+```bash
+export PB_API_KEY="pb_live_abc123def456"
+
+curl -X GET https://api.productbridge.io/v1/products \
+  -H "X-API-Key: $PB_API_KEY" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json"
+```
+
+### JavaScript (Fetch)
+
+```javascript
+const response = await fetch('https://api.productbridge.io/v1/products', {
+  method: 'GET',
+  headers: {
+    'X-API-Key': 'pb_live_abc123def456',
+    'Accept': 'application/json',
+  },
+});
+
+const data = await response.json();
+```
+
+### Python (Requests)
+
+```python
+import requests
+
+headers = {
+    'X-API-Key': 'pb_live_abc123def456',
+    'Accept': 'application/json',
+}
+
+response = requests.get('https://api.productbridge.io/v1/products', headers=headers)
+data = response.json()
+```
+
+---
+
+## Key Prefixes and Environments
+
+| Prefix | Environment | Use For |
+|--------|-------------|---------|
+| `pb_live_*` | Production | Live product data, real transactions |
+| `pb_test_*` | Staging | Development, CI/CD pipelines, sandbox testing |
+
+Keys are **environment-bound**. A production key cannot access staging, and vice versa.
+
+---
+
+## Permissions and Scopes
+
+API keys inherit permissions from the user who generated them. We support three permission levels:
+
+| Level | Access |
+|-------|--------|
+| **Read** | `GET` endpoints only |
+| **Write** | `GET`, `POST`, `PATCH`, `DELETE` |
+| **Admin** | Full access, including key generation and webhook management |
+
+To check your key's permissions, call `GET /products` with a `POST /products` payload in dry-run mode:
+
+```bash
+curl -X POST https://api.productbridge.io/v1/products \
+  -H "X-API-Key: $PB_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"sku":"TEST","name":"Test","price":1,"currency":"USD"}'
+```
+
+- `201 Created` → Write access confirmed
+- `401 Unauthorized` or `403 Forbidden` → Read-only key
+
+---
+
+## Security Best Practices
+
+### 1. Never Commit Keys to Version Control
+
+Use environment variables or secret managers:
+
+```bash
+# .env file (add to .gitignore!)
+PB_API_KEY=pb_live_abc123def456
+```
+
+```python
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv('PB_API_KEY')
+```
+
+### 2. Rotate Keys Regularly
+
+We recommend rotating production keys every **90 days**:
+
+1. Generate a new key in the dashboard
+2. Update your application configuration
+3. Delete the old key after confirming the new one works
+4. Monitor for `401` errors in your logs
+
+### 3. Use Separate Keys Per Service
+
+Do not share one key across your web app, mobile app, and ETL pipeline. Generate a dedicated key for each service. This allows you to:
+
+- Revoke compromised keys without affecting other systems
+- Audit usage per service
+- Apply least-privilege permissions
+
+### 4. Secure Key Storage
+
+| Environment | Recommended Storage |
+|-------------|---------------------|
+| Local dev | `.env` file (gitignored) |
+| CI/CD | Encrypted secrets (GitHub Actions, GitLab CI, etc.) |
+| Production | AWS Secrets Manager, Azure Key Vault, HashiCorp Vault |
+
+---
+
+## Handling Authentication Errors
+
+### 401 Unauthorized
+
+```json
+{
+  "error": {
+    "code": "UNAUTHORIZED",
+    "message": "Invalid or missing API key"
+  }
+}
+```
+
+**Common causes:**
+- Header is misspelled (`X-Api-Key` instead of `X-API-Key`)
+- Key was deleted or rotated
+- Key belongs to the wrong environment (staging key used on production)
+
+**Resolution checklist:**
+1. Verify the header name is exactly `X-API-Key`
+2. Verify the key has not expired in the dashboard
+3. Verify you are using the correct base URL for the key's environment
+
+### 403 Forbidden
+
+```json
+{
+  "error": {
+    "code": "FORBIDDEN",
+    "message": "Insufficient permissions for this operation"
+  }
+}
+```
+
+**Common causes:**
+- Read-only key attempting a `POST`, `PATCH`, or `DELETE`
+- Key generated by a user without admin privileges
+
+**Resolution:** Generate a new key with appropriate permissions, or contact your account admin.
+
+---
+
+## IP Allowlisting (Enterprise)
+
+Enterprise customers can restrict API key usage to specific IP addresses or CIDR ranges. Contact `devsupport@productbridge.io` to configure allowlisting.
+
+When enabled, requests from non-allowlisted IPs receive:
+
+```json
+{
+  "error": {
+    "code": "IP_NOT_ALLOWED",
+    "message": "Request origin not in allowlist",
+    "details": "IP 203.0.113.42 is not authorized for this key"
+  }
+}
+```
+
+---
+
+## Revoking a Key
+
+To revoke a key immediately:
+
+1. Go to **Settings → API Keys** in the dashboard
+2. Find the key in the list
+3. Click **Revoke**
+4. Confirm — the key becomes invalid within **30 seconds**
+
+**Warning:** Revoking a key breaks any application using it. Ensure you have a replacement key deployed before revoking.
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely Cause | Fix |
+|---------|--------------|-----|
+| `401` on every request | Wrong environment URL | Use `api.staging.productbridge.io` for test keys |
+| `401` after working before | Key rotated or revoked | Generate a new key |
+| `403` on `POST` | Read-only key | Create a key with Write or Admin permissions |
+| `429` immediately | Shared key hit by another service | Use dedicated keys per service |
